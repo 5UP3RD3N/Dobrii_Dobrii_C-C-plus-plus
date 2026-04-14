@@ -2,13 +2,16 @@
 
 int main(void)
 {
-    int init, k;
+    short a, b, init_a, init_b;
 
-    scanf("%d", &init);
-    k = init;
+    scanf("%hd, %hd", &a, &b);
+    init_a = a; init_b = b;
 
-    int *ptr_k = &k;
-    *ptr_k += 10;
+    short *ptr_a = &a;
+    short *ptr_b = &b;
+    short temp = *ptr_a;
+    *ptr_a = *ptr_b;
+    *ptr_b = temp;
 
     __ASSERT_TESTS__ // макроопределение для тестирования (не убирать и должно идти непосредственно перед return 0)
     return 0;
