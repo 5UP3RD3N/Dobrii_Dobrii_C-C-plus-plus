@@ -2,18 +2,14 @@
 
 int main(void)
 {
-    short a, b;
+    int var;
 
-    scanf("%hd, %hd", &a, &b);
+    scanf("%d", &var);
 
-    short *ptr_a = &a;
-    short *ptr_b = &b;
+    int *ptr_var = &var;
+    char *ptr_ch = (char *)ptr_var;
 
-    void *tmp = ptr_a;
-    ptr_a = ptr_b;
-    ptr_b = tmp;
-
-    printf("%hd %hd", *ptr_a, *ptr_b);
+    printf("%d", *ptr_ch);
 
     __ASSERT_TESTS__ // макроопределение для тестирования (не убирать и должно идти непосредственно перед return 0)
     return 0;
